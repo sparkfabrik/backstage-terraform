@@ -1,48 +1,57 @@
 # Variables
-variable default_region { 
-  type = string 
-}
-
-variable project { 
-  type = string 
-}
-
-variable vpc_cidr_block {
+variable "region" {
   type = string
 }
 
-variable public_subnets {
-  type = map
+variable "tags" {
+  type        = map(string)
+  description = "Map of predefined tags"
 }
 
-variable docker_image_tag {
+variable "s3state" {
   type = string
 }
 
-variable postgres_user {
+variable "project" {
   type = string
 }
 
-variable postgres_password {
+variable "vpc_cidr_block" {
   type = string
 }
 
-variable github_token {
+variable "public_subnets" {
+  type = map(any)
+}
+
+variable "docker_image_tag" {
   type = string
 }
 
-variable github_client_id {
+variable "postgres_user" {
   type = string
 }
 
-variable github_client_secret {
+variable "postgres_password" {
   type = string
 }
 
-variable access_key_id {
+variable "github_token" {
   type = string
 }
 
-variable secret_access_key {
+variable "github_client_id" {
+  type = string
+}
+
+variable "github_client_secret" {
+  type = string
+}
+
+variable "access_key_id" {
+  type = string
+}
+
+variable "secret_access_key" {
   type = string
 }

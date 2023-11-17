@@ -10,11 +10,11 @@ module "aws_vpc" {
 
 ### ALB
 module "aws_alb" {
-  source             = "./modules/alb"
-  project            = var.project
-  vpc_id             = module.aws_vpc.vpc_id
-  subnet_ids         = values(module.aws_vpc.public_subnets)
-  depends_on         = [module.aws_vpc]
+  source     = "./modules/alb"
+  project    = var.project
+  vpc_id     = module.aws_vpc.vpc_id
+  subnet_ids = values(module.aws_vpc.public_subnets)
+  depends_on = [module.aws_vpc]
 }
 
 ### RDS
@@ -75,7 +75,7 @@ module "aws_ecs" {
   project                  = var.project
   docker_image_url         = aws_ecr_repository.registry.repository_url
   docker_image_tag         = var.docker_image_tag
-  default_region           = var.default_region
+  default_region           = var.region
   vpc_id                   = module.aws_vpc.vpc_id
   security_group_ids       = [module.aws_alb.default_security_group_id]
   subnet_ids               = values(module.aws_vpc.public_subnets)
