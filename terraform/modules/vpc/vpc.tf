@@ -2,7 +2,6 @@ resource "aws_vpc" "backstage_vpc" {
   cidr_block = var.vpc_cidr_block
   enable_dns_support = true
   enable_dns_hostnames = true
-  enable_classiclink = false
   instance_tenancy = "default"
   tags = {
     Name = "${var.project}-vpc"

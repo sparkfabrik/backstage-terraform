@@ -8,9 +8,8 @@ services:
     volumes:
       - .:/usr/src/app
     ports:
-      - 127.0.0.1:3000:3000
+      - 3000:3000
       - 7000:7000
-    network_mode: 'host'
     environment:
       - NPM_REGISTRY=${NPM_REGISTRY}
       - POSTGRES_HOST=${POSTGRES_HOST}
