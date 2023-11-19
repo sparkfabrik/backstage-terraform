@@ -22,5 +22,5 @@ cli:
 terraform-cli:
 	docker run --rm -it --workdir /app \
 	--entrypoint bash -v $${PWD}/terraform:/app \
-	--env-file backstage-demo/.env \
+	--env-file .env \
 	backstage/terraform-cli
